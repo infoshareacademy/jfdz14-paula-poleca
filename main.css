@@ -27,10 +27,7 @@ html{
                         "mail mail mail mail"
                         "onas onas onas onas"
                         "footer footer footer footer";
-
-    
 }
-
 
 .nav{
     grid-area: nav;
@@ -38,7 +35,6 @@ html{
 
 .nav {
     grid-area: nav;    
-
     outline: 1px dotted grey;
     background: var(--nav-bg-color);
     overflow: auto;
@@ -132,7 +128,6 @@ html{
     justify-content: space-around;
     width: 100%;
     height: auto;
-    /* background-image: url(/images/Gda.jpg); */
     background-image: url(./images/gda.jpg);
     background-position: center;
     background-size: cover;
@@ -168,7 +163,6 @@ html{
 }
 
 /* logo */
-
 .logo {
     font-size: 2em;
     text-align: center;
@@ -265,6 +259,7 @@ html{
     grid-area: mail;
 }
 
+/* onas */
 .onas{
     grid-area:  onas;
     background-color: var(--primary-bg-color);
@@ -302,6 +297,7 @@ h2 {
 
 .onas__info ul li{
     margin: 8px;
+    
 }
 
 .onas__info {
@@ -312,6 +308,11 @@ h2 {
     align-items: center;
     text-align: center;
     color: var(--primary-text-color);
+}
+
+.onas__info H3{
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--additional-color);
 }
 
 a {
@@ -372,10 +373,6 @@ a:hover {
     align-self: center;
     font-size: 14px;
 }
-
-
-
-
 
 .mail__description h3{
     margin-top: 16px;
@@ -452,9 +449,9 @@ footer{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        padding-left: 60px;
+        /*padding-left: 60px;
         margin-left: 20px;
-        margin-right: 20px;
+        margin-right: 20px;*/
     }
 
 }
