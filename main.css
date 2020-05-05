@@ -10,6 +10,7 @@ html{
     height: 100%;
     font-size: 16px;
     font-family: 'Fira Sans', sans-serif;
+    background-color: var(--primary-bg-color);
 }
 
 
@@ -18,19 +19,16 @@ html{
     height: 100%;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:"nav nav nav nav"
                         "hero hero hero hero"
+                        "new new new new"
                         "main main main main"
                         "func func func func"
                         "more more more more"
                         "mail mail mail mail"
                         "onas onas onas onas"
                         "footer footer footer footer";
-}
-
-.nav{
-    grid-area: nav;
 }
 
 .nav {
@@ -50,16 +48,33 @@ html{
 } 
 .more .link-nav {
     display: block;
-    margin-bottom: 30px;;
+    margin-bottom: 30px;
 } 
 .onas .link-nav {
     display: block;
-    margin-bottom: 30px;;
+    margin-bottom: 30px;
 } 
 
 
 /* menu            */
 /* =============== */
+
+.nav {
+    grid-area: nav;    
+
+    background: var(--nav-bg-color);
+    overflow: auto;
+    position: fixed;
+    font-size: 16px;
+    width: 100%;
+}
+.nav__wrapper {
+    margin-top: 42px;
+}
+.nav__menu .active {
+    background-color: lightgreen;
+    background-color: var(--nav-bg-color-active);
+}
 
 .nav .nav__link {
     text-decoration: none;
@@ -67,13 +82,21 @@ html{
     line-height: 32px;
     color: black;
     text-align: center;
-    transition: all 0.4s;
+    transition: all 0.6s;
 }
 .nav .nav__link.icon {
     width: 44px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    font-size: 30px;
+    padding: 5px;
 }
 .nav .nav__link:not(.icon):hover {
     background-color: var(--nav-bg-color-hover);
+    /* background-color: lightgreen; */
     color: #333;
 }
 
@@ -91,7 +114,8 @@ html{
 /* desktop */
 @media screen and (min-width: 636px) {
     .nav .nav__wrapper {
-        justify-content: flex-start;   
+        justify-content: flex-end; 
+        margin-top: 0;  
     }    
     .nav .nav__link:not(.icon) {
         display: block;
@@ -124,8 +148,8 @@ html{
 .hero{
     grid-area: hero;
     /*display: flex;
-    flex-wrap:wrap;*/
-    justify-content: space-around;
+    flex-wrap:wrap;
+    justify-content: space-around;*/
     width: 100%;
     height: auto;
     background-image: url(./images/gda.jpg);
@@ -142,7 +166,7 @@ html{
 
 }
 
-.hero__opis h1{
+/*.hero__opis h1{
     text-align: center;
     color: var(--hero-text-color); 
     margin-top: 16px;
@@ -159,14 +183,42 @@ html{
     letter-spacing: 1px;
     color: var(--hero-text-color); 
     display: none;
+    padding-top: 16px;
+
+}*/
+
+/*nowa sekcja*/
+
+.new {
+    grid-area: new;
+    margin: 16px;
+    padding: 16px;
+    background-color: var(--primary-bg-color);
+}
+
+.new h2 { 
+    font-size: 2.5rem;
+    line-height: 1.6;
+    letter-spacing: 2px;
+    border-bottom: 1px solid;
+}
+
+.new p{
+    font-size: 1rem;
+    line-height: 1,5;
+    letter-spacing: 1px;
+    padding-top: 16px;
 
 }
+
+
 
 /* logo */
 .logo {
     font-size: 2em;
     text-align: center;
     padding: 8px;
+    align-self: center;
 }
 
 .logo__name {
@@ -176,6 +228,14 @@ html{
     padding: 8px;
     text-align: center;
   }
+
+.logo h1{
+    font-size: 1em;
+    color: var(--hero-text-color);
+    align-self: center;
+    padding: 8px;
+    text-align: center;
+}
 
 .logo img {
     width: 150px;
@@ -221,6 +281,7 @@ html{
     color: var(--additional-color);
     font-size: 4em;
 }
+
 .more{
     grid-area: more;
     width: 100%;
@@ -229,30 +290,40 @@ html{
     padding: 25px 0;
 
 }
-
+.more p{
+    margin-top: 8px;
+    padding-bottom: 8px;
+}
 .more__col{
-    padding: 10px 50px;
+    padding: 10px;
     width: 100%;
     text-align: center;
 }
 
 .more__col ul{
     list-style: none;
-
 }
+
 .more__col img{
     border-radius: 50%;
+    margin-bottom:8px;
+    margin-top: 8px;
 }
 
-.more__col div{
-    margin-top: 20px;
-    padding: 10px;
+.more__col__item{
+    margin: 24px;
+    padding: 8px 8px 8px 8px;
     
 }
 
 .more__col div:hover{
     background-color: var(--secondary-bg-color);
     border-radius: 20px;
+    height: 340px;
+}
+.more_col__item p{
+    margin: 8px 0px 8px 0px;
+    padding: 8px 0px 8px 0px;
 }
 
 
@@ -337,8 +408,9 @@ a:hover {
     justify-content: center;
     text-align: center;
     padding: 16px 16px 16px 16px;
-    margin: 16px 16px 16px 16px;
+    margin: 32px 16px 16px 16px;
     font-family: 'Fira Sans', sans-serif;
+    border: 4px solid #fff;
 }
 .mail__description {
     margin-bottom: 8px;
@@ -416,6 +488,39 @@ input {
     border-color: var(--additional-color);
 }
 
+.cookie__notice{
+    padding: 8px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--additional-color);
+    color: #fff;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    display: flex;
+}
+
+.cookie__notice a{
+    color: #fff;
+    font-size: 12px;
+
+}
+
+.cookie-notice__btn{
+    background: #fff;
+    color: var(--additional-color);
+    margin-left: 15px;
+    padding: 8px 8px 8px 8px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+
 footer{
     grid-area: footer;
     padding: 16px 16px 16px 16px;
@@ -427,24 +532,48 @@ footer{
     
 
 @media (min-width:768px) {
+    .container{
+        display: grid;
+        height: 100%;
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 32px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:"nav nav nav nav"
+                            "hero hero hero hero"
+                            "new new mail mail"
+                            "main main main main"
+                            "func func func func"
+                            "more more more more"
+                            "onas onas onas onas"
+                            "footer footer footer footer";
+    
+        
+    }
     html, body {
         font-size: 18px;
     }
-    .hero__opis{
-        width: 40%;
+
+    .hero {
+        height: 550px;
+        display: flex;
+        flex-wrap:wrap;
     }
+
+    .logo {
+        width: 400px;
+        height: auto;
+    }
+    
+    .new {
+        display: block;
+    }
+
     .more__wrapper{
         display: flex;
         justify-content: space-around;
         
     }
-    .hero__opis p{
-        display: block;
-    }
-    .hero {
-        display: flex;
-        flex-wrap:wrap;
-    }
+    
     .hero .link-nav {
         margin-top: -50px;
     }
@@ -457,9 +586,10 @@ footer{
         margin-right: 20px;
     }
 
-    .more__col div{
-        height: 265px;
+   .more__col__item{
+        height: 320px;
     }
+    
 
 }
 
@@ -474,7 +604,7 @@ footer{
         margin-right: 0px;
         padding: 0px;
         padding-top: 16px;
-        font-size: 13px;
+        font-size: 16px;
     }
     .onas__wrapper{
         display: flex;
