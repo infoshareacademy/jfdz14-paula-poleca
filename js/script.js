@@ -58,6 +58,12 @@ options.forEach(function(item) {
     }
 });
 
+const linkLogo = document.querySelector('.nav__link.logo');
+linkLogo.addEventListener('click', function() {
+    console.log('home');
+    setActive(document.getElementById('mainPage'));
+
+});
 
 // FORM
 var form = document.querySelector('#mail__form');
@@ -111,3 +117,7 @@ cookieNoticeBtn.addEventListener('click', () => {
         cookieNoticeBanner.style.display = 'none'
     
 }})();
+
+
+const modal = document.querySelector(".modal");
+const modalCloseBtn = document.querySelector(".fas.fa-times")
