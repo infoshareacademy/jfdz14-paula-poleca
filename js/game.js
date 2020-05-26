@@ -1,3 +1,20 @@
+//Modal
+
+const modal = document.querySelector(".modal");
+const modalCloseBtn = document.querySelector(".fas.fa-times")
+const showGameBtn = document.querySelector("#but")
+
+showGameBtn.addEventListener('click', () => {
+    modal.style.display = 'block'
+});
+
+modalCloseBtn.addEventListener('click', () => {
+    modal.style.display = 'none'
+
+});
+
+
+
 
 (function() {
 console.log('mini-game');  
@@ -302,16 +319,6 @@ startButton.addEventListener("click", startGame);
 resetButton.addEventListener("click", resetGame);
 
 })();
-
-
-
-
-
-
-
-
-
-
 
 
 

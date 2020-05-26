@@ -680,11 +680,14 @@ footer{
     background-color: #fefefe;
     margin: 16% auto; 
     padding: 16px;
-    border: 1px solid #888;
+    border: 4px solid var(--additional-color);
     width: 80%; 
+    height: 250px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    background-color: #f7f7f7;
+
 }
 
   .fas.fa-times{
