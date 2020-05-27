@@ -681,8 +681,8 @@ footer{
     margin: 16% auto; 
     padding: 16px;
     border: 4px solid var(--additional-color);
-    width: 80%; 
-    height: 250px;
+    width: 60%; 
+    height: 150px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
