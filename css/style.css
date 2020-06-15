@@ -803,6 +803,25 @@ footer{
 
 }
 
+
+@media (min-width: 1600px) {
+.slider_img__item{
+    display: none;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    margin-left: 200px;
+    margin-right: 200px;
+    }
+
+.fa.fa-chevron-right {
+        margin-right: 100px;
+    }
+.fa.fa.fa-chevron-left {
+        margin-left: 100px;
+    }
+
+}
 .up {
     position: fixed;
     bottom: 10px;
